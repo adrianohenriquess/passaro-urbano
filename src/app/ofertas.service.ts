@@ -56,4 +56,20 @@ export class OfertasService {
     public getOfertas(): Array<Oferta> {
         return this.ofertas;
     }
+
+    public getOfertas2(): Promise<Oferta[]> {
+        return new Promise((resolve, reject) => {
+            let deuCerto = true;
+            if (deuCerto){
+                setTimeout(() => resolve(this.ofertas), 3000);
+            } else {
+                reject({codigo_erro:404, mensagem_erro:"Não encontrado"});
+            }
+
+        }).then((ofertas) => {
+            //faz alguma tratativa
+            console.log('primeiro then');
+            return this.ofertas;
+        })
+    }
 }
