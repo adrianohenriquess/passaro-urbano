@@ -1,3 +1,5 @@
+import { rejects } from 'assert';
+import { resolve } from 'dns';
 import { Oferta } from './shared/oferta.model';
 
 export class OfertasService {
@@ -69,6 +71,14 @@ export class OfertasService {
         }).then((ofertas) => {
             //faz alguma tratativa
             console.log('primeiro then');
+            return this.ofertas;
+        }).then((ofertas) => {
+            //faz alguma tratativa
+            console.log('segundo then');
+            return new Promise((resolve2, reject2) => {
+                setTimeout(() => {resolve2(ofertas)}, 3000);
+            })
+        }).then((ofertas) => {
             return this.ofertas;
         })
     }
