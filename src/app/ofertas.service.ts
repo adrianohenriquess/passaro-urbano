@@ -1,3 +1,4 @@
+import { urlApi } from './app.api';
 import { Oferta } from './shared/oferta.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -7,19 +8,17 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class OfertasService {
 
-    urlBase = 'http://localhost:3000/ofertas';
-
     constructor(private httpClient: HttpClient){}
 
     public getOfertas(): Observable<Oferta[]> {
-        return this.httpClient.get<Oferta[]>(this.urlBase);
+        return this.httpClient.get<Oferta[]>(urlApi);
     }
 
     public getOfertasPorCategoria(categoria: string): Observable<Oferta[]> {
-        return this.httpClient.get<Oferta[]>(`${this.urlBase}?categoria=${categoria}`);
+        return this.httpClient.get<Oferta[]>(`${urlApi}?categoria=${categoria}`);
     }
 
     public getOferta(idOferta: string): Observable<Oferta> {
-        return this.httpClient.get<Oferta>(`${this.urlBase}/${idOferta}`);
+        return this.httpClient.get<Oferta>(`${urlApi}/${idOferta}`);
     }
 }

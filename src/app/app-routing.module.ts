@@ -1,4 +1,4 @@
-import { DiversaoComponent } from './diversao/diversao.component';
+/*import { DiversaoComponent } from './diversao/diversao.component';
 import { RestaurantesComponent } from './restaurantes/restaurantes.component';
 import { HomeComponent } from './home/home.component';
 import { NgModule } from '@angular/core';
@@ -13,7 +13,7 @@ export const ROUTES: Routes = [
   { path: 'oferta/:id', component: OfertaComponent}
 ];
 
-/*@NgModule({
+@NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
