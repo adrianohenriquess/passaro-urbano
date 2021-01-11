@@ -18,4 +18,8 @@ export class OfertasService {
     public getOfertasPorCategoria(categoria: string): Observable<Oferta[]> {
         return this.httpClient.get<Oferta[]>(`${this.urlBase}?categoria=${categoria}`);
     }
+
+    public getOferta(idOferta: string): Observable<Oferta> {
+        return this.httpClient.get<Oferta>(`${this.urlBase}/${idOferta}`);
+    }
 }
