@@ -1,1 +1,1 @@
-export const urlApi = 'http://localhost:3000/ofertas';
+export const HOST = 'http://localhost:3000';
