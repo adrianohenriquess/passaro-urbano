@@ -7,9 +7,15 @@ import { Observable } from 'rxjs';
 @Injectable()
 export class OfertasService {
 
+    urlBase = 'http://localhost:3000/ofertas';
+
     constructor(private httpClient: HttpClient){}
 
     public getOfertas(): Observable<Oferta[]> {
-        return this.httpClient.get<Oferta[]>('http://localhost:3000/ofertas');
+        return this.httpClient.get<Oferta[]>(this.urlBase);
+    }
+
+    public getOfertasPorCategoria(categoria: string): Observable<Oferta[]> {
+        return this.httpClient.get<Oferta[]>(`${this.urlBase}?categoria=${categoria}`);
     }
 }
