@@ -1,3 +1,4 @@
+import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule, LOCALE_ID } from '@angular/core';
@@ -18,6 +19,7 @@ import { OndeFicaComponent } from './oferta/onde-fica/onde-fica.component';
 import localePt from '@angular/common/locales/pt';
 import { registerLocaleData } from '@angular/common';
 
+
 registerLocaleData(localePt, 'pt-BR');
 
 @NgModule({
@@ -30,7 +32,8 @@ registerLocaleData(localePt, 'pt-BR');
     DiversaoComponent,
     OfertaComponent,
     ComoUsarComponent,
-    OndeFicaComponent
+    OndeFicaComponent,
+    DescricaoReduzida
   ],
   imports: [
     BrowserModule,
