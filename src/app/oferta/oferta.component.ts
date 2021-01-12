@@ -1,5 +1,6 @@
+import { Observable, Observer, Subscription } from 'rxjs';
 import { OfertasService } from './../ofertas.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Oferta } from '../shared/oferta.model';
 
@@ -9,7 +10,7 @@ import { Oferta } from '../shared/oferta.model';
   styleUrls: ['./oferta.component.css'],
   providers: [OfertasService]
 })
-export class OfertaComponent implements OnInit {
+export class OfertaComponent implements OnInit, OnDestroy {
 
   public idOferta: string = '';
   public oferta!: Oferta;
@@ -27,6 +28,10 @@ export class OfertaComponent implements OnInit {
     this.ofertasService.getOferta(this.idOferta).subscribe(oferta => {
       this.oferta = oferta;
     });
+  }
+
+  ngOnDestroy(): void {
+
   }
 
 }

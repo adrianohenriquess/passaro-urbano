@@ -31,4 +31,8 @@ export class OfertasService {
     public getOndeFicaOfertaPorId(id: number): Observable<OndeFica> {
         return this.httpClient.get<OndeFica>(`${HOST}/onde-fica/${id}`);
     }
+
+    public pesquisaOfertas(termo: string): Observable<Oferta[]> {
+        return this.httpClient.get<Oferta[]>(`${HOST}/ofertas?descricao_oferta_like=${termo}`);
+    }
 }
