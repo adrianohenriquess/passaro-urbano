@@ -1,11 +1,16 @@
+import { Pedido } from './../shared/pedido.model';
+import { OrdemCompraService } from './../ordem-compra.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-ordem-compra',
   templateUrl: './ordem-compra.component.html',
-  styleUrls: ['./ordem-compra.component.css']
+  styleUrls: ['./ordem-compra.component.css'],
+  providers: [ OrdemCompraService ]
 })
 export class OrdemCompraComponent implements OnInit {
+
+  public idPedidoCompra!: number;
 
   public endereco: string = '';
   public numero: string = '';
@@ -24,7 +29,9 @@ export class OrdemCompraComponent implements OnInit {
 
   public formEstado: string = 'disabled';
 
-  constructor() { }
+  public pedido: Pedido = new Pedido('', '', '', '');
+
+  constructor(private ordemCompraService: OrdemCompraService) { }
 
   ngOnInit(): void {
   }
@@ -82,4 +89,17 @@ export class OrdemCompraComponent implements OnInit {
       this.formEstado = 'disabled';
     }
   }
+
+  public confirmarCompra(): void {
+    this.pedido.endereco = this.endereco;
+    this.pedido.numero = this.numero;
+    this.pedido.complemento = this.complemento;
+    this.pedido.formaPagamento = this.formaPagamento;
+    console.log(this.pedido);
+    this.ordemCompraService.efetivarCompra(this.pedido)
+      .subscribe((resposta: any) => {
+        this.idPedidoCompra = resposta.id;
+      });
+  }
+
 }
