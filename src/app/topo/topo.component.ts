@@ -23,7 +23,7 @@ export class TopoComponent implements OnInit {
   ngOnInit(): void {
     this.ofertas = this.subjectPesquisa
       .pipe(
-        debounceTime(500),
+        debounceTime(400),
         distinctUntilChanged(),
         switchMap((termo: string) => {
           console.log('chamando a api' + termo);
