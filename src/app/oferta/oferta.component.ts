@@ -21,12 +21,10 @@ export class OfertaComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     //subscribe para programação reativa para assistir alterações na rota
-    /*this.activatedRoute.params.subscribe((parametro: any) =>{
-      console.log(parametro.id);
-    });*/
-    this.idOferta = this.activatedRoute.snapshot.params['id'];
-    this.ofertasService.getOferta(this.idOferta).subscribe(oferta => {
-      this.oferta = oferta;
+    this.activatedRoute.params.subscribe((parametro: any) =>{
+      this.ofertasService.getOferta(parametro.id).subscribe(oferta => {
+        this.oferta = oferta;
+      });
     });
   }
 

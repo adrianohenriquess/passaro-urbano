@@ -1,6 +1,6 @@
 import { ComoUsar } from './../../shared/como-usar.model';
 import { OfertasService } from './../../ofertas.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Params } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { Oferta } from 'src/app/shared/oferta.model';
 
@@ -19,11 +19,12 @@ export class ComoUsarComponent implements OnInit {
               private ofertasService: OfertasService) { }
 
   ngOnInit(): void {
-    this.idRotaPai = this.route.parent!.snapshot.params['id'];
-    this.ofertasService.getComoUsarOfertaPorId(this.idRotaPai)
-          .subscribe(comoUsar => {
-            this.comoUsar = comoUsar;
-          });
+    this.route.parent!.params.subscribe((parametros: Params) =>{
+      this.ofertasService.getComoUsarOfertaPorId(parametros.id)
+            .subscribe(comoUsar => {
+              this.comoUsar = comoUsar;
+            });
+    })
   }
 
 }
