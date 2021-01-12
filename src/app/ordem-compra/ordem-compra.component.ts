@@ -12,6 +12,16 @@ export class OrdemCompraComponent implements OnInit {
   public complemento: string = '';
   public formaPagamento: string = '';
 
+  public enderecoValido!: boolean;
+  public numeroValido!: boolean;
+  public complementoValido!: boolean;
+  public formaPagamentoValido!: boolean;
+
+  public enderecoEstadoPrimitivo: boolean = true;
+  public numeroEstadoPrimitivo: boolean = true;
+  public complementoEstadoPrimitivo: boolean = true;
+  public formaPgtoEstadoPrimitivo: boolean = true;
+
   constructor() { }
 
   ngOnInit(): void {
@@ -19,21 +29,41 @@ export class OrdemCompraComponent implements OnInit {
 
   public atualizaEndereco(endereco: string): void {
     this.endereco = endereco;
-    console.log(this.endereco);
+    this.enderecoEstadoPrimitivo = false;
+    if (this.endereco.length > 3) {
+      this.enderecoValido = true;
+    } else {
+      this.enderecoValido = false;
+    }
   }
 
   public atualizaNumero(numero: string): void {
     this.numero = numero;
-    console.log(this.numero);
+    this.numeroEstadoPrimitivo = false;
+    if (this.numero.length >= 1) {
+      this.numeroValido = true;
+    } else {
+      this.numeroValido = false;
+    }
   }
 
   public atualizaComplemento(complemento: string): void {
     this.complemento = complemento;
-    console.log(this.complemento);
+    this.complementoEstadoPrimitivo = false;
+    if (this.complemento.length > 3) {
+      this.complementoValido = true;
+    } else {
+      this.complementoValido = false;
+    }
   }
 
   public atualizaFormaPagamento(formaPagamento: string): void {
     this.formaPagamento = formaPagamento;
-    console.log(this.formaPagamento);
+    this.formaPgtoEstadoPrimitivo = false;
+    if (this.formaPagamento != '') {
+      this.formaPagamentoValido = true;
+    } else {
+      this.formaPagamentoValido = false;
+    }
   }
 }
