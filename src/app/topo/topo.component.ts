@@ -23,7 +23,7 @@ export class TopoComponent implements OnInit {
   ngOnInit(): void {
     this.ofertas = this.subjectPesquisa
       .pipe(
-        debounceTime(400),
+        debounceTime(1000),
         distinctUntilChanged(),
         switchMap((termo: string) => {
           console.log('chamando a api' + termo);
@@ -32,8 +32,7 @@ export class TopoComponent implements OnInit {
           }
           return this.ofertasService.pesquisaOfertas(termo);
         })
-      )
-      .catch((erro: any) => {
+      ).catch((erro: any) => {
         console.log(erro);
         return Observable.of<Oferta[]>([]);
       })
