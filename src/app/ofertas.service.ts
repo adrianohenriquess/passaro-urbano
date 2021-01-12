@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs';
 import { ComoUsar } from './shared/como-usar.model';
+import { delay, retry } from 'rxjs/operators';
 
 @Injectable()
 export class OfertasService {
@@ -33,6 +34,10 @@ export class OfertasService {
     }
 
     public pesquisaOfertas(termo: string): Observable<Oferta[]> {
-        return this.httpClient.get<Oferta[]>(`${HOST}/ofertas?descricao_oferta_like=${termo}`);
+        return this.httpClient.get<Oferta[]>(`${HOST}/ofertas?descricao_oferta_like=${termo}`)
+            .pipe(
+                retry(3),
+                delay(5000)
+            );
     }
 }
