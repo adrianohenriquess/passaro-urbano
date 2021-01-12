@@ -3,6 +3,7 @@ import { OfertasService } from './../ofertas.service';
 import { Component, OnInit } from '@angular/core';
 import { Oferta } from '../shared/oferta.model';
 import { debounceTime, switchMap } from 'rxjs/operators';
+import 'rxjs/add/observable/of';
 
 @Component({
   selector: 'app-topo',
@@ -24,6 +25,9 @@ export class TopoComponent implements OnInit {
         debounceTime(1000),
         switchMap((termo: string) => {
           console.log('chamando a api' + termo);
+          if (termo.trim() === '') {
+            return Observable.of<Oferta[]>([]);
+          }
           return this.ofertasService.pesquisaOfertas(termo);
         })
       );
