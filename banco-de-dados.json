@@ -220,6 +220,20 @@
       "complemento": "54325",
       "formaPagamento": "debito",
       "id": 5
+    },
+    {
+      "endereco": "Rua teste 4321432",
+      "numero": "5435",
+      "complemento": "54353",
+      "formaPagamento": "debito",
+      "id": 6
+    },
+    {
+      "endereco": "Rua da Teste da silva",
+      "numero": "54345",
+      "complemento": "Casa",
+      "formaPagamento": "debito",
+      "id": 7
     }
   ]
 }
