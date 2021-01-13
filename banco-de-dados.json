@@ -234,6 +234,13 @@
       "complemento": "Casa",
       "formaPagamento": "debito",
       "id": 7
+    },
+    {
+      "endereco": "dsafdsa",
+      "numero": "33333",
+      "complemento": "dfsafds",
+      "formaPagamento": "debito",
+      "id": 8
     }
   ]
 }
