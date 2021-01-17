@@ -1,3 +1,4 @@
+import { CarrinhoService } from './carrinho.service';
 import { DescricaoReduzida } from './util/descricao-reduzida.pipe';
 import { RouterModule } from '@angular/router';
 import { BrowserModule } from '@angular/platform-browser';
@@ -46,7 +47,7 @@ registerLocaleData(localePt, 'pt-BR');
     ReactiveFormsModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [ { provide: LOCALE_ID, useValue: 'pt-BR'} ],
+  providers: [ CarrinhoService, { provide: LOCALE_ID, useValue: 'pt-BR'} ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -241,6 +241,100 @@
       "complemento": "dfsafds",
       "formaPagamento": "debito",
       "id": 8
+    },
+    {
+      "endereco": "sdafdsa",
+      "numero": "44",
+      "complemento": "dsa",
+      "formaPagamento": "dinheiro",
+      "id": 9
+    },
+    {
+      "endereco": "Rua xyz",
+      "numero": "233",
+      "complemento": "123",
+      "formaPagamento": "dinheiro",
+      "itens": [
+        {
+          "id": 4,
+          "img": {
+            "url": "/assets/ofertas/4/img1.jpg"
+          },
+          "titulo": "Estância das águas",
+          "descricaoOferta": "Diversão garantida com piscinas, trilhas e muito mais.",
+          "valor": 31.9,
+          "quantidade": 3
+        },
+        {
+          "id": 3,
+          "img": {
+            "url": "/assets/ofertas/3/img1.jpg"
+          },
+          "titulo": "Pizzas Grandes",
+          "descricaoOferta": "Pizza Grande, Mussarela, Marguerita ou outras!",
+          "valor": 21.9,
+          "quantidade": 3
+        }
+      ],
+      "id": 10
+    },
+    {
+      "endereco": "Rua teste",
+      "numero": "342",
+      "complemento": "32",
+      "formaPagamento": "debito",
+      "itens": [
+        {
+          "id": 4,
+          "img": {
+            "url": "/assets/ofertas/4/img1.jpg"
+          },
+          "titulo": "Estância das águas",
+          "descricaoOferta": "Diversão garantida com piscinas, trilhas e muito mais.",
+          "valor": 31.9,
+          "quantidade": 3
+        },
+        {
+          "id": 6,
+          "img": {
+            "url": "/assets/ofertas/6/img1.jpg"
+          },
+          "titulo": "Academia de tiro",
+          "descricaoOferta": "Sessão de tiro dinâmico com Instrutor, Estande, Alvo e Equipamentos.",
+          "valor": 89.9,
+          "quantidade": 5
+        }
+      ],
+      "id": 11
+    },
+    {
+      "endereco": "Rua teste",
+      "numero": "43212",
+      "complemento": "3421",
+      "formaPagamento": "dinheiro",
+      "itens": [
+        {
+          "id": 2,
+          "img": {
+            "url": "/assets/ofertas/2/img1.jpg"
+          },
+          "titulo": "Cozinha Mexicana",
+          "descricaoOferta": "Almoço ou Jantar com Rodízio Mexicano delicioso.",
+          "valor": 32.9,
+          "quantidade": 3
+        },
+        {
+          "id": 1,
+          "img": {
+            "url": "/assets/ofertas/1/img1.jpg"
+          },
+          "titulo": "Super Burger",
+          "descricaoOferta": "Rodízio de Mini-hambúrger com opção de entrada.",
+          "valor": 29.9,
+          "quantidade": 3
+        }
+      ],
+      "id": 12
     }
   ]
 }
